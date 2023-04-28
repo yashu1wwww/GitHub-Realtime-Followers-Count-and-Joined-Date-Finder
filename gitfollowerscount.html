@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Movie Rating Count</title>
+    <style>
+      body {
+        background-image: url('https://c4.wallpaperflare.com/wallpaper/851/501/292/minimalism-programming-code-wallpaper-preview.jpg'); /* Replace with the URL of your image file */
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a drop shadow */
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .rating {
+        font-size: 72px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .total-ratings {
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <style>
+   h1 {
+  font-family: cursive;
+  font-size: 48px;
+  color: #FF1493; /* deep pink */
+  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+}
+h2 {
+  font-family: fantasy;
+  font-size: 32px;
+  color: #FF7F7F; /* a light red */
+  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+}
+</style>
+<h1>Live GitHub Followers Count</h1>
+<h2>Enter a Github Username</h2>
+      <form>
+        <lab<label for="username" style="font-weight: bold;">Username:</label>
+<input type="text" id="username" name="username" style="padding: 5px; border: 1px solid black;">
+        <button type="button" onclick="fetchFollowerCount()">Search</button>
+      </form>
+      <div class="follower-count" id="follower-count"></div>
+    </div>
+    <script>
+      function fetchFollowerCount() {
+        const username = document.getElementById('username').value;
+
+        fetch(`https://api.github.com/users/${username}`)
+          .then(response => response.json())
+          .then(data => {
+            const followersCount = data.followers;
+            const followerCountElement = document.getElementById('follower-count');
+            followerCountElement.textContent = `Followers: ${followersCount}`;
+          })
+          .catch(error => {
+            console.error('Error fetching follower count:', error);
+          });
+      }
+    </script>
+  </body>
+</html>
