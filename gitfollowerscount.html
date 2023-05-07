@@ -1,110 +1,97 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GITHUB LIVE FOLLOWERS COUNT</title>
+    <title>GitHub Live Followers Count Search Tool</title>
     <style>
+	body {
+  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2021/08/Adriano_Nicoletti_Carovigno_2019_07-1600x1200.jpg');
+}
+/* Add some basic styling to the page */
       body {
-        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVxq8WcZO6JachHZ1NNhJxYjJ0_51yGoHPg&usqp=CAU'); /* Replace with the URL of your image file */
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
         font-family: Arial, sans-serif;
-        background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a drop shadow */
+        margin: 0;
+        padding: 0;
       }
       h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 50px;
       }
-      h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
+      form {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
       }
-      .rating {
-        font-size: 72px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      .total-ratings {
-        font-size: 18px;
-        margin-bottom: 40px;
+      input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        margin-right: 10px;
       }
       button {
-        font-size: 18px;
-        padding: 10px 20px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
         background-color: #007bff;
         color: #fff;
-        border: none;
-        border-radius: 4px;
         cursor: pointer;
       }
-      button:hover {
-        background-color: #0062cc;
+      #followers-count {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 24px;
       }
+	   </style>
+  </head>
+  <body>
+  <p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=800000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+FOLLOWERS+COUNT;HAPPY+SEARCHING....!">
+</p>
+	<br>
+<br>
+<center>
+  <button style="background-color: white;"><a href="mailto:yashwanth6678@gmail.com" style="color: black; text-decoration: none;">Contact Me</a></button>
+</center>
+<br>
+<center>
+  <button style="background-color: white;"><a href="https://github.com/yashu1wwww" style="color: black; text-decoration: none;">GitHub Account</a></button>
+</center>
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1 class="bordered">GITHUB LIVE FOLLOWERS COUNT</h1>
+    <h1>GitHub Live Followers Count Search Tool</h1>
+    <form>
+      <input type="text" id="username" placeholder="Enter a GitHub username">
+      <button type="button" onclick="getFollowersCount()">Search</button>
+    </form>
+    <div id="followers-count"></div>
+    <script>
+      function getFollowersCount() {
+        // Get the entered username
+        const username = document.getElementById("username").value;
 
-<style>
-  .bordered {
-    border: 1px solid black;
-    padding: 10px;
-  }
-</style>
-<form>
-       <label for="username" style="font-weight: 800; color: red; border: 1px dotted black; padding: 5px;">USERNAME:</label>
-<input type="text" id="username" name="username" style="padding: 5px; border: 1px dotted black; color: red;">
-<button type="button" onclick="fetchFollowerCount()">Search</button>
-      </form>
-      <style>
-  .follower-count {
-    border: 2px solid black;
-    padding: 10px;
-  }
-</style>
-<div class="follower-count" id="follower-count">
-  <!-- your content here -->
-</div>
-<script>
-      function fetchFollowerCount() {
-        const username = document.getElementById('username').value;
-
+        // Make a GET request to the GitHub API to fetch the user's followers count
         fetch(`https://api.github.com/users/${username}`)
           .then(response => response.json())
           .then(data => {
+            // Update the HTML page with the user's followers count
             const followersCount = data.followers;
-            const followerCountElement = document.getElementById('follower-count');
-            followerCountElement.textContent = `Followers: ${followersCount}`;
+            document.getElementById("followers-count").innerHTML = `@${username}  ${followersCount} Followers `;
           })
           .catch(error => {
-            console.error('Error fetching follower count:', error);
+            // Handle any errors that occur during the fetch request
+            console.error(error);
+            document.getElementById("followers-count").innerHTML = `An error occurred while fetching the followers count for @${username}. Please try again later.`;
           });
       }
     </script>
-    <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=FF0000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+FOLLOWERS+COUNT;HAPPY+SEARCHING....!">
-</p>
-<style>
-button a {
-  color: black;
-}
-</style>
-  <button style="background-color: black;"><a href="mailto:yashwanth6678@gmail.com" style="color: white; text-decoration: none;">Contact Me</a></button>
-</div>
-</body>
+  </body>
+</html>
 <div style="text-align: center;">
   <form action="2.html">
-    <button type="submit" style="background-color: white; color: black;">Click Here For Live GitHub Followers Counts</button>
+    <button type="submit" style="background-color: white; color: black;">Click Here For Live GitHub Profile Visits Counts</button>
   </form>
 </div>
 </body>
 </html>
-
