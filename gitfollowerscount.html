@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GitHub Live Followers Count Search Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Live Followers Count Search Tool</title>
     <style>
-	body {
-  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2021/08/Adriano_Nicoletti_Carovigno_2019_07-1600x1200.jpg');
+body {
+  background-image: url('https://cdn.pixabay.com/photo/2023/04/15/15/16/house-7927916_960_720.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 /* Add some basic styling to the page */
       body {
         font-family: Arial, sans-serif;
@@ -46,22 +50,42 @@
   </head>
   <body>
   <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=800000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+FOLLOWERS+COUNT;HAPPY+SEARCHING....!">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=000000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+FOLLOWERS+COUNT;HAPPY+SEARCHING....!">
 </p>
 	<br>
 <br>
-<center>
-  <button style="background-color: white;"><a href="mailto:yashwanth6678@gmail.com" style="color: black; text-decoration: none;">Contact Me</a></button>
-</center>
-<br>
-<center>
-  <button style="background-color: white;"><a href="https://github.com/yashu1wwww" style="color: black; text-decoration: none;">GitHub Account</a></button>
-</center>
-    </style>
-  </head>
+<div class="buttons-container">
+  <a href="mailto:yashwanth6678@gmail.com" class="button">Contact Me</a>
+  <a href="https://github.com/yashu1wwww" class="button">GitHub Account</a>
+</div>
+<style>
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: black;
+    color: white;
+  }
+</style>
+</head>
   <body>
-    <h1>GitHub Live Followers Count Search Tool</h1>
-    <form>
+    <h1 style="color: #000000;">GITHUB LIVE FOLLOWERS COUNT SEARCH TOOL</h1>
+<form>
       <input type="text" id="username" placeholder="Enter a GitHub username">
       <button type="button" onclick="getFollowersCount()">Search</button>
     </form>
@@ -77,7 +101,7 @@
           .then(data => {
             // Update the HTML page with the user's followers count
             const followersCount = data.followers;
-            document.getElementById("followers-count").innerHTML = `@${username}  ${followersCount} Followers `;
+            document.getElementById("followers-count").innerHTML = `${followersCount} FOLLOWERS`;
           })
           .catch(error => {
             // Handle any errors that occur during the fetch request
@@ -90,8 +114,6 @@
 </html>
 <div style="text-align: center;">
   <form action="2.html">
-    <button type="submit" style="background-color: white; color: black;">Click Here For Live GitHub Profile Visits Counts</button>
+<button type="submit" style="background-color: #00FFFF; color: black; border-radius: 25px; padding: 10px 20px; font-size: 16px; cursor: pointer; font-weight: bold;">Click Here For Live GitHub Profile Visits Counts</button>
   </form>
 </div>
-</body>
-</html>
