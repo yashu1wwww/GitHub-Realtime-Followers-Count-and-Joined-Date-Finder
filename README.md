@@ -1,6 +1,6 @@
 # Real-time-GitHub-Live-Followers-Count-Tool
 
-"𝙄 𝙪𝙨𝙚𝙙 𝘼𝙄 𝙩𝙤 𝙞𝙢𝙥𝙧𝙤𝙫𝙚 𝙢𝙮 𝙬𝙤𝙧𝙠.
+"𝙄 𝙪𝙨𝙚𝙙 𝘼𝙄 𝙩𝙤 𝙞𝙢𝙥𝙧𝙤𝙫𝙚 𝙢𝙮 𝙬𝙤𝙧𝙠".
 
 " I searched for a Realtime Live Followers Count Tool on Github, but could not find one. So, I created it.
  
