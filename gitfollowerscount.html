@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub Live Followers Count Search Tool</title>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Live Followers Count Search Tool</title>
     <style>
-body {
-  background-image: url('https://cdn.pixabay.com/photo/2023/04/15/15/16/house-7927916_960_720.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Add some basic styling to the page */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        background-image: url('https://imgtr.ee/images/2023/05/11/lZPBY.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
+      
       h1 {
         text-align: center;
         margin-top: 50px;
       }
+      
       form {
         display: flex;
         justify-content: center;
         margin-top: 50px;
       }
+      
       input[type="text"] {
         padding: 10px;
         font-size: 16px;
         border-radius: 5px;
         border: none;
         margin-right: 10px;
+        width: 80%;
+        max-width: 300px;
       }
+      
       button {
         padding: 10px;
         font-size: 16px;
@@ -40,17 +43,28 @@ body {
         background-color: #007bff;
         color: #fff;
         cursor: pointer;
+        width: 20%;
+        max-width: 100px;
       }
+      
       #followers-count {
         text-align: center;
         margin-top: 50px;
         font-size: 24px;
       }
-	   </style>
+      
+      @media screen and (max-width: 768px) {
+        input[type="text"] {
+          width: 60%;
+        }
+        button {
+          width: 40%;
+        }
+      }
+    </style>
   </head>
-  <body>
   <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=000000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+FOLLOWERS+COUNT;HAPPY+SEARCHING....!">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=8B0000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+FOLLOWERS+COUNT;HAPPY+SEARCHING....!">
 </p>
 	<br>
 <br>
@@ -84,9 +98,17 @@ body {
 </style>
 </head>
   <body>
-    <h1 style="color: #000000;">GITHUB LIVE FOLLOWERS COUNT SEARCH TOOL</h1>
-<form>
-      <input type="text" id="username" placeholder="Enter a GitHub username">
+  <br>
+  <br>
+  <div style="text-align: center;">
+  <a href="https://gitfollowerscountliveweb.on.drv.tw/git/2.html?" style="background-color: #00FFFF; color: black; border-radius: 25px; padding: 10px 20px; font-size: 16px; cursor: pointer; font-weight: bold; text-decoration: none;">Click Here For Live GitHub Profile Visits Counts</a>
+<center>
+  <div>
+    <h1 style="color: #FFFFFF; background-color: #2B3856; font-family: Arial, sans-serif; font-size: 24px; padding: 10px; display: inline-block;">GITHUB LIVE FOLLOWERS COUNT SEARCH TOOL</h1> 
+    </div>
+</center>
+<br>
+<input type="text" id="username" placeholder="Enter a GitHub username">
       <button type="button" onclick="getFollowersCount()">Search</button>
     </form>
     <div id="followers-count"></div>
@@ -112,8 +134,3 @@ body {
     </script>
   </body>
 </html>
-<div style="text-align: center;">
-  <form action="githubprofilevisitscount.html">
-<button type="submit" style="background-color: #00FFFF; color: black; border-radius: 25px; padding: 10px 20px; font-size: 16px; cursor: pointer; font-weight: bold;">Click Here For Live GitHub Profile Visits Counts</button>
-  </form>
-</div>
