@@ -2,17 +2,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Github Live Followers Count</title>
+    <title>GitHub Live Followers Count Tool</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	 <!-- Correct the favicon URL and specify the type -->
+    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+	
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .target-cursor {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: moveCursor 0.3s infinite alternate;
+        }
+
+        @keyframes moveCursor {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+    </style>
+	</head>
+<body>
+<div class="target-cursor"></div>
+
+<html lang="en">
+<head>
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
 />
  
-  
-    <!-- Correct the favicon URL and specify the type -->
-    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
-    
-    <style>
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -122,15 +163,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
   </br>
   </br>
   <div>
-    <a href="https://yashawanthtechprojects.on.drv.tw/GitHub/profile.html" class="button">ClickHere For Live GitHub Profile Visits Counts</a>
+    <a href="https://yashawanthtechprojects.on.drv.tw/GitHub/profile.html" class="button">Click Here For Live GitHub Profile Visits Counts</a>
     <center>
       <div>
+	  </br>
         <h1
-        style="color: #FFFFFF; background-color: #2B3856; font-family: Arial, sans-serif; font-size: 24px; padding: 10px; display: inline-block;">
+        style="color: #FFF; background-color: blue; font-family: Arial, sans-serif; font-size: 20px; padding: 10px; display: inline-block;">
           GITHUB LIVE FOLLOWERS COUNT SEARCH TOOL</h1>
-        </div>
       </center>
-      <br>
      <form onsubmit="event.preventDefault(); getFollowersCount()">
   <input type="text" id="username" placeholder="Enter a GitHub username" style="font-weight: bold; color: #333;">
   <button type="submit">Search</button>
@@ -138,29 +178,32 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 <div id="followers-count">
 </div>
     <script>
-      function getFollowersCount() {
-        // Get the entered username
-        const username = document.getElementById("username").value;
-        
-        // Make a GET request to the GitHub API to fetch the user's followers count
-        fetch(`https://api.github.com/users/${username}`)
-          .then(response => response.json())
-          .then(data => {
-            // Update the HTML page with the user's followers count
-            const followersCount = data.followers;
-            if (followersCount){
-              document.getElementById("followers-count").innerHTML = `${followersCount} FOLLOWERS`;
-            }else{
-              document.getElementById("followers-count").innerHTML = data.message;
-            }
-          })
-          .catch(error => {
-            // Handle any errors that occur during the fetch request
-            console.error(error);
-            document.getElementById("followers-count").innerHTML = `An error occurred while fetching the followers count for @${username}. Please try again later.`;
-          });
+  function getFollowersCount() {
+    // Get the entered username
+    const username = document.getElementById("username").value;
+    
+    // Make a GET request to the GitHub API to fetch the user's followers count
+    fetch(`https://api.github.com/users/${username}`)
+      .then(response => response.json())
+      .then(data => {
+        // Check if the response contains an error message or if followersCount is undefined
+        if (data.message || data.followers === undefined) {
+          // Display a alert
+          alert("Username Not Found.Please Enter A Valid GitHub Username.");
+        } else {
+          // Update the HTML page with the user's followers count
+          const followersCount = data.followers;
+          document.getElementById("followers-count").innerHTML = `${followersCount} FOLLOWERS`;
         }
-        </script>
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch request
+        console.error(error);
+        document.getElementById("followers-count").innerHTML = `An error occurred while fetching the followers count for @${username}. Please try again later.`;
+      });
+  }
+</script>
+</div>
 </br>
 <a href="" class="button">Copyright Reserved Designed & Developed By Yashawanth R</a>
 <script src="https://www.drv.tw/inc/wd.js?s=gitfollowerscountliveweb"></script><script src="https://www.drv.tw/inc/wd.js?s=yashawanthtechprojects"></script>
@@ -195,7 +238,14 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
 </script>
 <script src="https://d36jcksde1wxzq.cloudfront.net/bugsnag.aa0d0038ca72648bf8ec.js"></script>
 <script src="https://d36jcksde1wxzq.cloudfront.net/main.fb8d2007b0855c3bebb3.js"></script>
+<script>
+    // Custom cursor
+    const targetCursor = document.querySelector('.target-cursor');
+    document.addEventListener('mousemove', (e) => {
+        targetCursor.style.left = e.clientX + 'px';
+        targetCursor.style.top = e.clientY + 'px';
+    });
+</script>
 </body>
 </html>
 
-  
