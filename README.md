@@ -1,4 +1,4 @@
-# Real-time-GitHub-Live-Followers-Count-Tool
+# GitHub-Live-Followers-Count-Tool
 
 ## Please feel free to share any updates or errors.
  
