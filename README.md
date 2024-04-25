@@ -1,7 +1,5 @@
 # GitHub-Live-Followers-Count-Tool
 
-## Please feel free to share any updates or errors.
- 
 Real-time GitHub Live Followers Count Tool that fetches the live followers count of any GitHub username acc
 
 Search github live followers here:
