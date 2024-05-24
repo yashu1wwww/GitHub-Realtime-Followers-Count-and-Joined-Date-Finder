@@ -2,7 +2,7 @@
 
 Display the real-time count of GitHub followers along with the user's join date Just Enter Username or URL
 
-Search github live followers here:
+# Search here:
 
 https://githubfollowerslivecount.netlify.app
 
