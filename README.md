@@ -1,4 +1,4 @@
-# GitHub-Live-Followers-Count-Tool
+#  GitHub-Realtime-Followers-Count-and-Joined-Date-Finder
 
 Display the real-time count of GitHub followers along with the user's join date Just Enter Username or URL
 
