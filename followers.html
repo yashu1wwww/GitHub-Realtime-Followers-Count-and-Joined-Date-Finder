@@ -1,6 +1,241 @@
 <!-- Copying the code is easy, but when you create it, you have to become busy -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GitHub Live Followers Count With Joined Date</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+    <style>
+      html, body {
+      overflow: hidden; 
+    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-For Source Code Open Link & Press Ctrl+U
+        .target-cursor {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: moveCursor 0.3s infinite alternate;
+        }
 
-To view the source code of a webpage on Android, add view-source: before url
+        @keyframes moveCursor {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 8px;
+            background-image: url('https://wallpaperaccess.com/full/1567770.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+            width: 20%;
+            max-width: 100px;
+        }
+
+        #followers-count {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 768px) {
+            input[type="text"] {
+                width: 60%;
+            }
+
+            button {
+                width: 40%;
+            }
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .followers-count {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            10%, 90% {
+                transform: translateX(-5px);
+            }
+            20%, 80% {
+                transform: translateX(5px);
+            }
+            30%, 50%, 70% {
+                transform: translateX(-5px);
+            }
+            40%, 60% {
+                transform: translateX(5px);
+            }
+        }
+		#joined-date {
+    color: black;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+<div class="target-cursor"></div>
+<div class="container">
+    <p align="center">
+        <img
+            style="display: block;"
+            src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=20&duration=5001&color=8B0000&vCenter=true&center=true&width=460&lines=WLC+TO+GITHUB;+LIVE+FOLLOWERS+COUNT;WITH+JOINED+DATE;DISPLAY+HAPPY+SEARCHING....!">
+    </p>
+    <br>
+    <br>
+    <div class="buttons-container">
+        <a href="mailto:yashwanth6678@gmail.com" class="button">Contact Me</a>
+        <a href="https://github.com/yashu1wwww" class="button">GitHub Account</a>
+    </div>
+    <br>
+    <br>
+    <div>
+        <a href="https://yashwanthwebproject.netlify.app" class="button">Click Here For Web Development Projects</a>
+        <center>
+            <div>
+                <br>
+                <h1 style="color: black; background-color:#754d4d2b; font-family: Arial, sans-serif; font-size: 19px; padding: 3px; display: inline-block;">
+                    GITHUB LIVE FOLLOWERS COUNT</h1>
+         <div>
+    <form id="github-form" onsubmit="event.preventDefault(); getFollowersCount()">
+        <input type="text" id="input" placeholder="Enter a GitHub Username or URL" style="font-weight: bold; color: #333;">
+        <button type="submit">Search</button>
+    </form>
+<div id="followers-count" class="followers-count"></div>
+<br>
+<div id="joined-date"></div>
+</div>
+<br>
+<a class="button">Copyright ® Developed By Yashawanth R</a>
+</div>
+<script>
+ const targetCursor = document.querySelector('.target-cursor');
+                document.addEventListener('mousemove', (e) => {
+                    targetCursor.style.left = e.clientX + 'px';
+                    targetCursor.style.top = e.clientY + 'px';
+                });
+ function getFollowersCount() {
+    const input = document.getElementById("input").value;
+    const followersCountElement = document.getElementById("followers-count");
+    const joinedDateElement = document.getElementById("joined-date");
+
+    document.getElementById("input").classList.remove("shake");
+
+    followersCountElement.innerHTML = '';
+    joinedDateElement.innerHTML = ''; 
+
+    const username = input.includes("github.com") ? input.split("/").pop() : input;
+
+    fetch(`https://api.github.com/users/${username}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.followers === undefined) {
+                document.getElementById("input").classList.add("shake");
+            } else {
+                const followersCount = data.followers;
+                const joinedDate = new Date(data.created_at).toLocaleDateString(); 
+                followersCountElement.innerHTML = `${followersCount} FOLLOWERS`;
+
+                joinedDateElement.innerHTML = `Joined on: ${joinedDate}`;
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            followersCountElement.innerHTML = `An error occurred while fetching the followers count for @${username}. Please try again later.`;
+            document.getElementById("input").classList.add("shake");
+        });
+}
+
+document.getElementById("github-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        getFollowersCount();
+    });
+</script>
+ </body>
+</html>
